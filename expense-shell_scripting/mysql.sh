@@ -12,7 +12,7 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 VALIDATE(){
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then
         echo -e "$R ERROR:: $N $2"
         exit 1
@@ -47,7 +47,7 @@ mysql -h $IPV4ADDRESS -u root -pExpenseApp@1 -e 'show databses;' &>>$LOG_FILE_NA
 
 if [ $? -ne 0 ]
 then
-    echo "MYSQL Root password not setup" &>>&>>$LOG_FILE_NAME
+    echo "MYSQL Root password not setup" &>>$LOG_FILE_NAME
     mysql_secure_installation --set-root-pass ExpenseApp@1
     VALIDATE $? "Setting Root Password"
 else
