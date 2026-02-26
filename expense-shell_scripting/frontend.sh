@@ -39,9 +39,6 @@ VALIDATE $? "Nginx installation ..."
 systemctl enable nginx &>>$LOG_FILE_NAME
 VALIDATE $? "Nginx enable ...."
 
-systemctl start nginx &>>$LOG_FILE_NAME
-VALIDATE $? "Start nginx...."
-
 rm -rf /usr/share/nginx/html/*
 VALIDATE $? "Removing conetnt in html folder ..."
 
