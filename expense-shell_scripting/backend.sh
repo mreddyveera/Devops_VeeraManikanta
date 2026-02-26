@@ -38,7 +38,7 @@ dnf module enable nodejs:20 -y &>>$LOG_FILE_NAME
 VALIDATE $? "Nodejs 20 version download...."
 
 dnf install nodejs -y &>>$LOG_FILE_NAME
-VALIDE $? "Nodejs installation...."
+VALIDATE $? "Nodejs installation...."
 
 useradd expense &>>$LOG_FILE_NAME
 VALIDATE $? "USERADD PROCESS..."
@@ -57,7 +57,7 @@ VALIDATE $? "Unziping the backend code ..."
 npm install &>>$LOG_FILE_NAME
 VALIDATE $? " Installing dependencies..."
 
-cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
+cp /home/ec2-user/Devops_VeeraManikanta/expense-shell_scripting/backend.service /etc/systemd/system/backend.service
 
 #PREPARE MYSQL SCHEMA
 
