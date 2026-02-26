@@ -41,8 +41,11 @@ dnf install nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? "Nodejs installation...."
 
 useradd expense &>>$LOG_FILE_NAME
-VALIDATE $? "USERADD PROCESS..."
-
+if [ $? -ne 0 ]
+then
+    echo -e "$G User already exists $N "
+else
+    echo -e "$G user add success $N"
 mkdir -p /app &>>$LOG_FILE_NAME
 VALIDATE $? "Creating app directory..."
 
