@@ -12,7 +12,7 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 CHECK_ROOTUSER (){
-    if [ USERID -ne 0 ]
+    if [ $USERID -ne 0 ]
     then
         echo -e "$R Switch to root user"
     else
